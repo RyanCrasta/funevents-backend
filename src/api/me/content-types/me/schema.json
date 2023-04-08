@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mes",
+  "info": {
+    "singularName": "me",
+    "pluralName": "mes",
+    "displayName": "me"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    }
+  }
+}
