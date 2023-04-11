@@ -26,4 +26,12 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  'users-permissions': {
+    config: {
+      jwt: {
+        expiresIn: '2d',
+      },
+      jwtSecret: env("SECRET_JWT")
+    },
+  },
 });
