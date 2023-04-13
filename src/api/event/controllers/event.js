@@ -2,15 +2,16 @@
 
 /**
  *  event controller
- */
+*/
 
 const { createCoreController } = require("@strapi/strapi").factories;
 
 //! Create is Owner Policy
 module.exports = createCoreController("api::event.event", ({ strapi }) => ({
+  // link event with user
   async create(ctx) {
-    const { id } = ctx.state.user; //ctx.state.user contains the current authenticated user
-    const response = await super.create(ctx);
+    const { id } = ctx.state.user; // ctx.state.user contains the current authenticated user
+    const response = await super.create(ctx); // response.id is event id
     const updatedResponse = await strapi.entityService.update(
       "api::event.event",
       response.data.id,
